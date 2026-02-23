@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Darshan Kalambe | Full-Stack Portfolio</title>
+    <title>Darshan Kalambe | Full-Stack Engineer Profile</title>
     
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -39,7 +39,6 @@
         }
         
         @media (min-width: 768px) { .chart-container { height: 320px; } }
-        @media (min-width: 1024px) { .chart-container { height: 350px; } }
 
         .tab-active { 
             border-bottom: 3px solid #2563eb; 
@@ -60,9 +59,18 @@
 
         .no-scrollbar::-webkit-scrollbar { display: none; }
         .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+
+        .project-node.active {
+            border-left: 4px solid #2563eb;
+            background-color: #eff6ff;
+        }
+
+        .profile-img {
+            object-fit: cover;
+            object-position: center 20%;
+        }
     </style>
 
-    <!-- Chosen Palette: Slate, Blue, Emerald, Indigo -->
     <!-- CONFIRMATION: NO SVG graphics used. NO Mermaid JS used. -->
 </head>
 <body class="text-slate-800 antialiased">
@@ -70,63 +78,66 @@
     <div id="app" class="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 py-4 sm:py-8 min-h-screen flex flex-col gap-4 sm:gap-6">
 
         <!-- HEADER SECTION -->
-        <header class="bg-white rounded-2xl shadow-sm p-4 sm:p-6 flex flex-col lg:flex-row justify-between items-center border border-slate-100 gap-4 sm:gap-6">
-            <div class="flex flex-col sm:flex-row items-center gap-4 text-center sm:text-left w-full lg:w-auto">
-                <div class="h-16 w-16 sm:h-20 sm:w-20 bg-gradient-to-br from-blue-600 to-indigo-700 rounded-2xl flex items-center justify-center text-white text-2xl sm:text-3xl font-black shadow-xl shrink-0">
-                    DK
+        <header class="bg-white rounded-3xl shadow-sm p-4 sm:p-6 flex flex-col lg:flex-row justify-between items-center border border-slate-100 gap-6">
+            <div class="flex flex-col sm:flex-row items-center gap-6 text-center sm:text-left w-full lg:w-auto">
+                <div class="relative group">
+                    <!-- Profile Picture referencing the uploaded file -->
+                    <img src="https://drive.google.com/file/d/1eXVZAuN58dyzQusbafhcwp8E7h8aLHea/view" alt="Darshan Kalambe" 
+                         onerror="this.src='https://ui-avatars.com/api/?name=Darshan+Kalambe&background=2563eb&color=fff&size=128'"
+                         class="h-24 w-24 sm:h-32 sm:w-32 rounded-2xl profile-img shadow-xl border-2 border-white transition-transform group-hover:scale-105">
+                    <div class="absolute -bottom-2 -right-2 bg-emerald-500 h-6 w-6 rounded-full border-4 border-white shadow-sm" title="Actively Interviewing"></div>
                 </div>
                 <div>
-                    <h1 class="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight">Darshan Kalambe</h1>
-                    <p class="text-blue-600 font-bold text-sm sm:text-base">Full-Stack Java Developer</p>
-                    <div class="flex flex-wrap items-center justify-center sm:justify-start gap-3 mt-1 text-slate-500 text-xs sm:text-sm">
-                        <span><i class="fas fa-map-marker-alt mr-1"></i> Mumbai, India</span>
+                    <h1 class="text-2xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">Darshan Kalambe</h1>
+                    <p class="text-blue-600 font-bold text-sm sm:text-lg">Full-Stack Java Developer</p>
+                    <div class="flex flex-wrap items-center justify-center sm:justify-start gap-4 mt-2 text-slate-500 text-xs sm:text-sm">
+                        <span><i class="fas fa-map-marker-alt mr-2 text-blue-400"></i>Mumbai, India</span>
                         <span class="hidden sm:inline text-slate-300">|</span>
-                        <span><i class="fas fa-briefcase mr-1"></i> 3+ Years Exp</span>
-                        <span class="hidden sm:inline text-slate-300">|</span>
-                        <span class="font-medium text-emerald-600"><i class="fas fa-check-circle mr-1"></i> Available</span>
+                        <span><i class="fas fa-briefcase mr-2 text-blue-400"></i>3+ Years Experience</span>
                     </div>
                 </div>
             </div>
             
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:flex lg:flex-col items-center lg:items-end gap-2 sm:gap-3 text-xs sm:text-sm w-full lg:w-auto border-t lg:border-t-0 pt-4 lg:pt-0">
-                <a href="mailto:darshan.kalambe17@gmail.com" class="flex items-center gap-2 text-slate-600 hover:text-blue-600 transition truncate">
-                    <i class="fas fa-envelope text-blue-500 w-4"></i>darshan.kalambe17@gmail.com
+            <div class="flex flex-col items-center lg:items-end gap-2 text-xs sm:text-sm w-full lg:w-auto border-t lg:border-t-0 pt-4 lg:pt-0">
+                <a href="mailto:darshankalambe123@gmail.com" class="flex items-center gap-3 text-slate-600 hover:text-blue-600 font-medium transition">
+                    <i class="fas fa-envelope text-blue-500 w-4"></i>darshankalambe123@gmail.com
                 </a>
-                <span class="flex items-center gap-2 text-slate-600">
+                <span class="flex items-center gap-3 text-slate-600 font-medium">
                     <i class="fas fa-phone text-blue-500 w-4"></i>+91 9372463964
                 </span>
-                <div class="col-span-1 sm:col-span-2 flex justify-center lg:justify-end gap-4 mt-2">
-                    <a href="https://linkedin.com/in/darshan-kalambe/" target="_blank" class="bg-slate-50 p-2 rounded-lg text-blue-700 hover:bg-blue-100 transition border border-slate-200"><i class="fab fa-linkedin fa-lg"></i></a>
-                    <a href="https://github.com/Brookli17" target="_blank" class="bg-slate-50 p-2 rounded-lg text-slate-800 hover:bg-slate-200 transition border border-slate-200"><i class="fab fa-github fa-lg"></i></a>
-                    <a href="https://brookli17.github.io/portfolio/" target="_blank" class="bg-slate-50 p-2 rounded-lg text-emerald-600 hover:bg-emerald-50 transition border border-slate-200"><i class="fas fa-globe fa-lg"></i></a>
+                <div class="flex gap-4 mt-2">
+                    <a href="https://linkedin.com/in/darshan-kalambe/" target="_blank" class="p-2 rounded-xl bg-slate-50 text-blue-700 hover:bg-blue-50 transition border border-slate-200 shadow-sm"><i class="fab fa-linkedin fa-lg"></i></a>
+                    <a href="https://github.com/Brookli17" target="_blank" class="p-2 rounded-xl bg-slate-50 text-slate-800 hover:bg-slate-200 transition border border-slate-200 shadow-sm"><i class="fab fa-github fa-lg"></i></a>
+                    <a href="https://brookli17.github.io/portfolio/" target="_blank" class="p-2 rounded-xl bg-slate-50 text-emerald-600 hover:bg-emerald-50 transition border border-slate-200 shadow-sm"><i class="fas fa-globe fa-lg"></i></a>
                 </div>
             </div>
         </header>
 
         <!-- NAVIGATION -->
-        <div class="relative bg-white rounded-t-2xl shadow-sm border border-slate-100 overflow-hidden">
+        <div class="bg-white rounded-t-3xl shadow-sm border border-slate-100 overflow-hidden">
             <nav class="flex overflow-x-auto no-scrollbar scroll-smooth">
-                <button id="nav-dashboard" class="flex-1 min-w-[140px] px-4 py-4 text-xs sm:text-sm font-bold uppercase tracking-wider focus:outline-none transition-all tab-active" onclick="switchTab('dashboard')">
-                    <i class="fas fa-chart-pie mr-2"></i>Summary
-                </button>
-                <button id="nav-experience" class="flex-1 min-w-[140px] px-4 py-4 text-xs sm:text-sm font-bold uppercase tracking-wider focus:outline-none transition-all tab-inactive" onclick="switchTab('experience')">
+                <button id="nav-experience" class="flex-1 min-w-[140px] px-4 py-5 text-sm font-bold uppercase tracking-widest focus:outline-none transition-all tab-active" onclick="switchTab('experience')">
                     <i class="fas fa-code-branch mr-2"></i>Projects
                 </button>
-                <button id="nav-ats" class="flex-1 min-w-[140px] px-4 py-4 text-xs sm:text-sm font-bold uppercase tracking-wider focus:outline-none transition-all tab-inactive" onclick="switchTab('ats')">
+                <button id="nav-dashboard" class="flex-1 min-w-[140px] px-4 py-5 text-sm font-bold uppercase tracking-widest focus:outline-none transition-all tab-inactive" onclick="switchTab('dashboard')">
+                    <i class="fas fa-chart-pie mr-2"></i>Summary
+                </button>
+                <button id="nav-edu" class="flex-1 min-w-[160px] px-4 py-5 text-sm font-bold uppercase tracking-widest focus:outline-none transition-all tab-inactive" onclick="switchTab('edu')">
+                    <i class="fas fa-graduation-cap mr-2"></i>Edu & Certs
+                </button>
+                <button id="nav-ats" class="flex-1 min-w-[140px] px-4 py-5 text-sm font-bold uppercase tracking-wider focus:outline-none transition-all tab-inactive" onclick="switchTab('ats')">
                     <i class="fas fa-search mr-2"></i>ATS Audit
                 </button>
             </nav>
         </div>
 
         <!-- MAIN CONTENT AREA -->
-        <main id="content-area" class="bg-white rounded-b-2xl shadow-sm p-4 sm:p-8 min-h-[500px] border border-t-0 border-slate-100">
-            <!-- Content Dynamic -->
+        <main id="content-area" class="bg-white rounded-b-3xl shadow-sm p-4 sm:p-10 min-h-[600px] border border-t-0 border-slate-100">
+            <!-- Dynamic Content -->
         </main>
 
-        <footer class="text-center py-6 text-slate-400 text-xs flex flex-col sm:flex-row justify-center items-center gap-2">
-            <span>&copy; 2024 Darshan Kalambe</span>
-            <span class="hidden sm:inline">•</span>
-            <span>Java, Spring Boot, React, AWS Specialist</span>
+        <footer class="text-center py-6 text-slate-400 text-xs font-medium">
+            &copy; 2024 Darshan Kalambe • Built with Java, Spring Boot, React, and Cloud Expertise
         </footer>
     </div>
 
@@ -135,212 +146,277 @@
             profile: {
                 name: "Darshan Kalambe",
                 role: "Full-Stack Java Developer",
-                summary: "Expert in building scalable microservices and high-performance SPAs. Proven track record of optimizing system latency and accelerating user workflows."
+                summary: "3+ years experience building scalable microservices and high-performance SPAs for NMIMS Learning Management Systems."
             },
             skills: {
-                backend: ["Java", "Spring Boot", "Spring Data JPA", "Hibernate", "Microservices", "REST APIs", "SOAP"],
-                frontend: ["React.js", "TypeScript", "JavaScript", "Bootstrap", "JSP", "Thymeleaf"],
+                backend: ["Java", "Spring Boot", "Spring Data JPA", "Hibernate", "Microservices", "REST APIs", "SOAP", "Design Patterns"],
+                frontend: ["React.js", "TypeScript", "JavaScript", "Bootstrap", "JSP", "Thymeleaf", "jQuery"],
                 database: ["MySQL", "Cassandra", "Redis"],
-                tools: ["Docker", "AWS", "RabbitMQ", "Jenkins", "CI/CD", "Git", "LDAP"]
+                tools: ["Docker", "AWS", "RabbitMQ", "Jenkins", "CI/CD", "Git", "LDAP Server", "GitHub"]
             },
-            metrics: [
-                { label: "Page Load", value: 25, unit: "%", context: "Improved NMIMS LMS module load performance via React/TS migration." },
-                { label: "API Latency", value: 20, unit: "%", context: "Reduced service response times by optimizing Spring Boot logic and DAO layers." },
-                { label: "Workflow Ops", value: 40, unit: "%", context: "Automated course waivers, cutting manual processing overhead for faculty." },
-                { label: "Onboarding", value: 30, unit: "%", context: "Accelerated intake cycles through automated microservices and document validation." }
+            education: [
+                { degree: "Post-Graduate Diploma in Java Development", institution: "IT Vedant Education Pvt. Ltd", period: "Jun 2022 - Dec 2022", grade: "Grade: A+" },
+                { degree: "Bachelor of Science (Computer Science)", institution: "Pune Vidyarthi Griha's Vidya Bhawan", period: "May 2019 - May 2022", grade: "CGPA: 7.86" },
+                { degree: "Class XII (HSC)", institution: "Maharashtra State Board", period: "2019", grade: "First Class" },
+                { degree: "Class X (SSC)", institution: "Maharashtra State Board", period: "2017", grade: "First Class" }
             ],
-            experience: [
+            certifications: [
+                { name: "IBM Certified Java Fundamentals", issuer: "IBM", link: "https://drive.google.com/file/d/18WCZyOCWPS7xgWQD7UgvcWHXdHWi-odl/view" },
+                { name: "AWS S3 Basics", issuer: "Coursera", link: "https://www.coursera.org/account/accomplishments/verify/NBZMDJUYKXN9" },
+                { name: "React Basics", issuer: "Coursera", link: "https://www.coursera.org/account/accomplishments/verify/W8Q3B6H893SR" },
+                { name: "SpringBoot Specialist", issuer: "Itvedant Education", link: "#" },
+                { name: "MySQL 5.6 Developer", issuer: "Itvedant Education", link: "#" },
+                { name: "Programming in HTML5, JS, CSS3", issuer: "Itvedant Education", link: "#" },
+                { name: "Core Java Certification", issuer: "Itvedant Education", link: "#" }
+            ],
+            projects: [
                 {
-                    company: "JForce Solutions",
-                    role: "Software Engineer",
-                    period: "Jan 2023 - Present",
-                    location: "Mumbai",
-                    summary: "Driving technical excellence for NMIMS Global Access (NGASCE) through modernization of learning systems.",
-                    projects: [
-                        {
-                            title: "LMS Core Migration (NMIMS)",
-                            tech: ["React", "TypeScript", "JSP", "Thymeleaf"],
-                            desc: "Migrated legacy core modules from JSP to a modern React SPA for NMIMS Global Access.",
-                            result: "25% performance improvement for thousands of active users."
-                        },
-                        {
-                            title: "Student Course Waiver System",
-                            tech: ["Spring Security", "JWT", "Spring Boot", "Data JPA"],
-                            desc: "Designed and developed a scalable system for automated academic credit validation and course waivers.",
-                            result: "Reduced manual admin overhead by 40% across thousands of records."
-                        },
-                        {
-                            title: "Student Onboarding Microservice",
-                            tech: ["Microservices", "JWT", "React", "Role-Based Access"],
-                            desc: "Developed a standalone microservice for secure student registration, verification, and document management.",
-                            result: "Cut onboarding turnaround time by 30% during peak admission cycles."
-                        },
-                        {
-                            title: "P2P Live Chat Microservice",
-                            tech: ["WebSockets", "RabbitMQ", "Cassandra", "Spring Boot"],
-                            desc: "Built a real-time collaboration engine for students with horizontally scalable message persistence.",
-                            result: "Supports thousands of concurrent users with zero-latency delivery."
-                        }
-                    ]
+                    id: "lms",
+                    title: "LMS Core Migration (NMIMS)",
+                    client: "NMIMS Global Access (NGASCE)",
+                    tech: ["React", "TypeScript", "JSP", "Thymeleaf"],
+                    short: "Modernization of Learning Management System modules.",
+                    details: {
+                        problem: "Legacy JSP pages resulted in slow load times and high server overhead for thousands of concurrent students.",
+                        whatIDid: [
+                            "Led the end-to-end migration of learning modules from JSP to React SPAs.",
+                            "Developed a unified API consumption layer to handle multi-platform requests.",
+                            "Optimized asset delivery pipelines to enhance student engagement."
+                        ],
+                        result: "~25% improvement in page load performance for NMIMS students."
+                    },
+                    impact: "25% Faster Loading"
+                },
+                {
+                    id: "waiver",
+                    title: "Course Waiver Microservice",
+                    client: "Admin Portal (NMIMS)",
+                    tech: ["Spring Boot", "Spring Security", "JWT", "Spring Data JPA"],
+                    short: "Automated eligibility validation engine.",
+                    details: {
+                        problem: "Admin faculty manually verified thousands of course waiver requests per semester, leading to delays.",
+                        whatIDid: [
+                            "Built robust REST APIs to validate student eligibility and automate record updates.",
+                            "Secured service using JWT and Spring Security with role-based access.",
+                            "Refactored legacy DAO layers to Spring Data JPA for better query efficiency."
+                        ],
+                        result: "40% reduction in manual admin overhead across thousands of student records."
+                    },
+                    impact: "40% Admin Time Saved"
+                },
+                {
+                    id: "onboarding",
+                    title: "Student Onboarding Microservice",
+                    client: "NMIMS Global Access",
+                    tech: ["Microservices", "JWT", "React", "TypeScript"],
+                    short: "Secure registration and document verification workflow.",
+                    details: {
+                        problem: "The onboarding process was fragmented, requiring manual document validation and verification.",
+                        whatIDid: [
+                            "Architected a standalone microservice for Registration, Verification, and Document Workflows.",
+                            "Implemented JWT authentication to secure sensitive student records.",
+                            "Built a responsive React/TS frontend to guide students through verification."
+                        ],
+                        result: "Reduced onboarding turnaround time by ~30% during admission cycles."
+                    },
+                    impact: "30% Faster Intake"
+                },
+                {
+                    id: "chat",
+                    title: "P2P Live Chat Microservice",
+                    client: "Student Portal (NMIMS)",
+                    tech: ["WebSockets", "RabbitMQ", "Cassandra", "Spring Boot"],
+                    short: "Real-time student collaboration platform.",
+                    details: {
+                        problem: "Students lacked real-time collaborative tools within the student portal.",
+                        whatIDid: [
+                            "Developed a real-time messaging engine with room-based features using WebSockets.",
+                            "Integrated RabbitMQ as a message broker for high-volume event handling.",
+                            "Used Cassandra for horizontally scalable message persistence."
+                        ],
+                        result: "Zero-latency real-time collaboration supporting thousands of concurrent users."
+                    },
+                    impact: "Sub-100ms Latency"
                 }
             ],
-            atsKeywords: ["Java", "Spring Boot", "Microservices", "React.js", "TypeScript", "CI/CD", "Docker", "AWS", "REST APIs", "Hibernate", "SQL", "Scalability", "Agile", "JWT", "RabbitMQ"]
+            metrics: [
+                { label: "Page Load", value: 25 },
+                { label: "API Latency", value: 20 },
+                { label: "Manual Effort", value: 40 },
+                { label: "Onboarding", value: 30 }
+            ],
+            atsKeywords: ["Java", "Spring Boot", "Microservices", "React.js", "TypeScript", "CI/CD", "Docker", "AWS", "REST APIs", "Hibernate", "SQL", "JWT", "RabbitMQ"]
         };
 
-        let currentTab = 'dashboard';
+        let activeProject = candidateData.projects[0];
         let charts = {};
 
-        document.addEventListener('DOMContentLoaded', () => { renderDashboard(); });
-
         function switchTab(tabId) {
-            currentTab = tabId;
             document.querySelectorAll('nav button').forEach(btn => {
-                btn.className = btn.id === `nav-${tabId}` ? 'flex-1 min-w-[140px] px-4 py-4 text-xs sm:text-sm font-bold uppercase tracking-wider focus:outline-none transition-all tab-active' : 'flex-1 min-w-[140px] px-4 py-4 text-xs sm:text-sm font-bold uppercase tracking-wider focus:outline-none transition-all tab-inactive';
+                btn.className = btn.id === `nav-${tabId}` ? 'flex-1 min-w-[140px] px-4 py-5 text-sm font-bold uppercase tracking-wider focus:outline-none transition-all tab-active' : 'flex-1 min-w-[140px] px-4 py-5 text-sm font-bold uppercase tracking-wider focus:outline-none transition-all tab-inactive';
             });
+            const content = document.getElementById('content-area');
+            content.innerHTML = '';
+            Object.values(charts).forEach(c => c.destroy());
 
-            const contentArea = document.getElementById('content-area');
-            contentArea.innerHTML = '';
-            Object.values(charts).forEach(chart => chart.destroy());
-            charts = {};
-
+            if (tabId === 'experience') renderExperience();
+            if (tabId === 'edu') renderEducation();
             if (tabId === 'dashboard') renderDashboard();
-            else if (tabId === 'experience') renderExperience();
-            else if (tabId === 'ats') renderATS();
-            
+            if (tabId === 'ats') renderATS();
+
             window.scrollTo({ top: 0, behavior: 'smooth' });
-        }
-
-        function renderDashboard() {
-            const container = document.getElementById('content-area');
-            container.innerHTML = `
-                <div class="mb-8 animate-in slide-in-from-bottom duration-500">
-                    <h2 class="text-xl sm:text-2xl font-extrabold text-slate-800 mb-2">Performance Dashboard</h2>
-                    <p class="text-slate-500 text-sm sm:text-base">Quantifiable contributions and technical proficiency breakdown.</p>
-                </div>
-                
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
-                    <div class="bg-slate-50 p-5 sm:p-6 rounded-2xl border border-slate-200 hover-card">
-                        <div class="flex items-center justify-between mb-6">
-                            <h3 class="font-bold text-slate-700 flex items-center gap-2"><i class="fas fa-chart-line text-blue-500"></i> Operational Efficiency</h3>
-                            <span class="text-[10px] font-bold bg-emerald-100 text-emerald-700 px-2 py-1 rounded-full uppercase tracking-tighter">ROI Driven</span>
-                        </div>
-                        <div class="chart-container"><canvas id="impactChart"></canvas></div>
-                        <p class="text-[10px] text-slate-400 mt-4 text-center">Click a bar to see project context.</p>
-                        <div id="impact-detail" class="mt-4 p-4 bg-white border border-blue-100 rounded-xl text-xs sm:text-sm text-slate-600 italic hidden shadow-sm border-l-4 border-l-blue-500"></div>
-                    </div>
-
-                    <div class="bg-slate-50 p-5 sm:p-6 rounded-2xl border border-slate-200 hover-card">
-                        <div class="flex items-center justify-between mb-6">
-                            <h3 class="font-bold text-slate-700 flex items-center gap-2"><i class="fas fa-microchip text-indigo-500"></i> Full Stack Coverage</h3>
-                            <span class="text-[10px] font-bold bg-indigo-100 text-indigo-700 px-2 py-1 rounded-full uppercase tracking-tighter">Balanced</span>
-                        </div>
-                        <div class="chart-container"><canvas id="skillsChart"></canvas></div>
-                    </div>
-                </div>
-
-                <div class="mt-8 sm:mt-12">
-                    <h3 class="font-black text-slate-400 mb-6 text-[10px] uppercase tracking-[0.2em] text-center sm:text-left">Verified Tech Stack</h3>
-                    <div class="flex flex-wrap justify-center sm:justify-start gap-2 sm:gap-3">${getAllSkillsHTML()}</div>
-                </div>
-            `;
-            initImpactChart();
-            initSkillsChart();
         }
 
         function renderExperience() {
             const container = document.getElementById('content-area');
             container.innerHTML = `
-                <div class="mb-8">
-                    <h2 class="text-xl sm:text-2xl font-extrabold text-slate-800">Project Portfolio</h2>
-                    <p class="text-slate-500 text-sm">Every project implemented during tenure at JForce Solutions.</p>
+                <div class="flex flex-col lg:flex-row gap-8 animate-in fade-in duration-500">
+                    <div class="w-full lg:w-1/3 flex flex-col gap-3">
+                        <h2 class="text-xl font-black text-slate-900 uppercase tracking-widest mb-2">Project Portfolio</h2>
+                        ${candidateData.projects.map(p => `
+                            <div onclick="selectProject('${p.id}')" id="card-${p.id}" class="project-node p-5 rounded-xl border border-slate-100 cursor-pointer hover:bg-slate-50 transition-all ${activeProject.id === p.id ? 'active' : ''}">
+                                <h4 class="font-bold text-slate-800 text-sm">${p.title}</h4>
+                                <p class="text-xs text-slate-500 mt-1">${p.short}</p>
+                            </div>
+                        `).join('')}
+                    </div>
+                    <div id="project-detail" class="w-full lg:w-2/3 bg-slate-50 rounded-2xl p-6 sm:p-10 border border-slate-100 shadow-inner">
+                        <!-- Dynamic Details -->
+                    </div>
                 </div>
-                
-                <div class="space-y-12 relative before:absolute before:inset-0 before:ml-5 sm:before:ml-6 md:before:mx-auto md:before:translate-x-0 before:w-px before:bg-slate-200">
-                    ${candidateData.experience.map(job => `
-                        <div class="relative flex items-start md:items-center justify-between md:justify-normal md:odd:flex-row-reverse group">
-                            <!-- Indicator -->
-                            <div class="flex items-center justify-center w-10 h-10 sm:w-12 sm:h-12 rounded-2xl bg-slate-900 text-white shadow-xl z-10 shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 transition-transform group-hover:scale-110">
-                                <i class="fas fa-code text-sm"></i>
-                            </div>
-                            
-                            <!-- Card Content -->
-                            <div class="w-[calc(100%-3rem)] md:w-[calc(50%-3rem)] ml-4 md:ml-0 bg-white p-5 sm:p-8 rounded-3xl border border-slate-100 shadow-xl shadow-slate-200/50 hover:border-blue-400 transition-all">
-                                <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-2 gap-2">
-                                    <h3 class="font-extrabold text-xl text-slate-900">${job.company}</h3>
-                                    <span class="text-[10px] font-black text-blue-600 bg-blue-50 border border-blue-100 px-3 py-1 rounded-full uppercase tracking-widest">${job.period}</span>
-                                </div>
-                                <p class="text-slate-500 font-medium text-sm mb-6">${job.role} • ${job.location}</p>
-                                
-                                <div class="grid grid-cols-1 gap-6">
-                                    ${job.projects.map(p => `
-                                        <div class="group/project border-l-4 border-slate-100 hover:border-blue-500 pl-4 py-2 transition-all">
-                                            <h4 class="font-bold text-slate-800 text-sm sm:text-base mb-2 group-hover/project:text-blue-600 transition-colors">${p.title}</h4>
-                                            <div class="flex flex-wrap gap-1.5 mb-3">
-                                                ${p.tech.map(t => `<span class="text-[9px] font-black text-slate-500 bg-slate-50 px-2 py-0.5 rounded border border-slate-100">${t}</span>`).join('')}
-                                            </div>
-                                            <p class="text-xs text-slate-500 mb-3 leading-relaxed">${p.desc}</p>
-                                            <div class="inline-flex items-center gap-2 text-emerald-600 text-[10px] sm:text-xs font-bold bg-emerald-50/50 px-3 py-1.5 rounded-lg border border-emerald-100">
-                                                <i class="fas fa-award"></i> <span>${p.result}</span>
-                                            </div>
-                                        </div>
-                                    `).join('')}
-                                </div>
-                            </div>
+            `;
+            updateProjectDetail();
+        }
+
+        function selectProject(id) {
+            activeProject = candidateData.projects.find(p => p.id === id);
+            document.querySelectorAll('.project-node').forEach(n => n.classList.remove('active'));
+            document.getElementById(`card-${id}`).classList.add('active');
+            updateProjectDetail();
+        }
+
+        function updateProjectDetail() {
+            const detail = document.getElementById('project-detail');
+            detail.innerHTML = `
+                <div class="animate-in slide-in-from-right duration-300">
+                    <div class="flex flex-col sm:flex-row justify-between items-start gap-4 mb-8">
+                        <div>
+                            <span class="text-[10px] font-black text-blue-500 uppercase tracking-widest">${activeProject.client}</span>
+                            <h2 class="text-2xl sm:text-3xl font-black text-slate-900 leading-tight">${activeProject.title}</h2>
                         </div>
-                    `).join('')}
+                        <div class="bg-emerald-50 text-emerald-700 px-4 py-2 rounded-full text-xs font-bold border border-emerald-100 shadow-sm">${activeProject.impact}</div>
+                    </div>
+                    <div class="space-y-8">
+                        <section>
+                            <h5 class="text-[10px] font-black text-slate-400 uppercase tracking-widest mb-3 flex items-center gap-2">
+                                <i class="fas fa-exclamation-circle text-blue-400"></i> The Challenge
+                            </h5>
+                            <p class="text-sm sm:text-base text-slate-600 leading-relaxed">${activeProject.details.problem}</p>
+                        </section>
+                        <section>
+                            <h5 class="text-[10px] font-black text-slate-400 uppercase tracking-widest mb-3 flex items-center gap-2">
+                                <i class="fas fa-check-circle text-blue-400"></i> Full Implementation Details
+                            </h5>
+                            <ul class="space-y-3">
+                                ${activeProject.details.whatIDid.map(task => `<li class="text-xs sm:text-sm text-slate-700 flex items-start gap-3"><i class="fas fa-terminal text-blue-500 mt-1"></i> ${task}</li>`).join('')}
+                            </ul>
+                        </section>
+                        <section class="bg-white p-6 rounded-2xl border border-slate-200">
+                            <h5 class="text-[10px] font-black text-slate-400 uppercase tracking-widest mb-2 flex items-center gap-2">
+                                <i class="fas fa-chart-line text-emerald-500"></i> Business Result
+                            </h5>
+                            <p class="text-sm font-bold text-slate-800">${activeProject.details.result}</p>
+                        </section>
+                        <div class="flex flex-wrap gap-2 pt-4">
+                            ${activeProject.tech.map(t => `<span class="bg-slate-200 text-slate-700 px-3 py-1 rounded-lg text-[10px] font-black uppercase tracking-tighter">${t}</span>`).join('')}
+                        </div>
+                    </div>
                 </div>
             `;
         }
 
-        function renderATS() {
+        function renderEducation() {
             const container = document.getElementById('content-area');
-            const score = 92;
             container.innerHTML = `
-                <div class="mb-8 animate-in fade-in duration-700">
-                    <h2 class="text-xl sm:text-2xl font-extrabold text-slate-800">ATS Audit Simulation</h2>
-                    <p class="text-slate-500 text-sm">How your profile ranks against high-volume enterprise filters.</p>
-                </div>
-
-                <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
-                    <div class="bg-white p-8 rounded-3xl border border-slate-200 text-center shadow-sm flex flex-col items-center">
-                        <h3 class="text-[10px] font-black text-slate-400 uppercase tracking-[0.2em] mb-8">Optimization Score</h3>
-                        <div class="relative flex items-center justify-center p-2 rounded-full bg-slate-50 border-[10px] border-emerald-500 w-40 h-40">
-                            <div class="text-center">
-                                <span class="text-5xl font-black text-slate-900">${score}</span>
-                                <span class="block text-[10px] font-bold text-emerald-600 tracking-tighter uppercase mt-1">Excellent</span>
-                            </div>
-                        </div>
-                        <p class="mt-8 text-xs text-slate-400 leading-relaxed font-medium">Profile structure is highly compatible with <br> Workday, Taleo, and Greenhouse parsers.</p>
-                    </div>
-
-                    <div class="bg-white p-8 rounded-3xl border border-slate-200 lg:col-span-2 shadow-sm">
-                        <h3 class="text-[10px] font-black text-slate-400 uppercase tracking-[0.2em] mb-8">Extraction Strengths</h3>
-                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                            ${[
-                                { icon: 'fa-check-double', title: 'Keyword Match', desc: '98% match for Spring Boot & Microservices.', color: 'blue' },
-                                { icon: 'fa-percentage', title: 'Metric Presence', desc: 'Frequent use of specific numeric results.', color: 'emerald' },
-                                { icon: 'fa-sitemap', title: 'Logical Hierarchy', desc: 'Clean project-to-result mapping.', color: 'amber' },
-                                { icon: 'fa-shield-alt', title: 'Security Context', desc: 'Explicit JWT/Security terminology.', color: 'purple' }
-                            ].map(s => `
-                                <div class="p-4 rounded-2xl bg-slate-50 border border-slate-100 flex items-center gap-4">
-                                    <div class="h-10 w-10 bg-${s.color}-500 text-white rounded-xl flex items-center justify-center shrink-0 shadow-lg shadow-${s.color}-100"><i class="fas ${s.icon} text-sm"></i></div>
-                                    <div><h4 class="font-bold text-sm text-slate-800">${s.title}</h4><p class="text-[10px] text-slate-400 mt-0.5">${s.desc}</p></div>
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 animate-in fade-in duration-500">
+                    <div>
+                        <h2 class="text-xl font-black text-slate-900 uppercase tracking-widest mb-8 flex items-center gap-3">
+                            <i class="fas fa-university text-blue-500"></i> Academic Timeline
+                        </h2>
+                        <div class="space-y-10 border-l-2 border-slate-100 ml-3">
+                            ${candidateData.education.map(e => `
+                                <div class="relative pl-8">
+                                    <div class="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-white border-4 border-blue-500"></div>
+                                    <h4 class="font-bold text-slate-800 text-base leading-tight">${e.degree}</h4>
+                                    <p class="text-blue-600 font-semibold text-xs mt-1">${e.institution}</p>
+                                    <div class="flex justify-between items-center mt-2">
+                                        <span class="text-[10px] font-bold text-slate-400 uppercase tracking-tighter">${e.period}</span>
+                                        <span class="text-xs font-black text-emerald-600 bg-emerald-50 px-2 py-0.5 rounded-md">${e.grade}</span>
+                                    </div>
                                 </div>
                             `).join('')}
                         </div>
                     </div>
-
-                    <div class="bg-slate-900 p-8 rounded-3xl shadow-2xl lg:col-span-3">
-                        <div class="flex items-center justify-between mb-8">
-                            <h3 class="text-[10px] font-black text-slate-500 uppercase tracking-[0.2em]">Ranked Semantic Keywords</h3>
-                            <span class="text-[10px] font-bold text-blue-400">Total Extracted: ${candidateData.atsKeywords.length}</span>
-                        </div>
-                        <div class="flex flex-wrap gap-2">
-                            ${candidateData.atsKeywords.map(k => `
-                                <span class="bg-slate-800/50 text-slate-300 border border-slate-700 px-3 py-2 rounded-xl text-xs font-semibold hover:border-blue-500 hover:text-white transition-all cursor-default">
-                                    <span class="text-blue-500 mr-1.5 font-black">#</span>${k}
-                                </span>
+                    <div>
+                        <h2 class="text-xl font-black text-slate-900 uppercase tracking-widest mb-8 flex items-center gap-3">
+                            <i class="fas fa-award text-amber-500"></i> Verified Certifications
+                        </h2>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            ${candidateData.certifications.map(c => `
+                                <a href="${c.link}" target="_blank" class="p-5 bg-white border border-slate-200 rounded-2xl hover:border-blue-500 hover:shadow-lg transition-all group flex flex-col justify-between h-full">
+                                    <div class="flex justify-between items-start mb-3">
+                                        <h4 class="font-bold text-slate-800 text-xs sm:text-sm group-hover:text-blue-600 leading-snug">${c.name}</h4>
+                                        <i class="fas fa-external-link-alt text-[10px] text-slate-300 group-hover:text-blue-500"></i>
+                                    </div>
+                                    <span class="text-[10px] font-black text-slate-400 uppercase tracking-widest">${c.issuer}</span>
+                                </a>
                             `).join('')}
+                        </div>
+                    </div>
+                </div>
+            `;
+        }
+
+        function renderDashboard() {
+            const container = document.getElementById('content-area');
+            container.innerHTML = `
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 animate-in slide-in-from-bottom duration-500">
+                    <div class="bg-slate-50 p-8 rounded-3xl border border-slate-100 shadow-inner">
+                        <h3 class="text-[10px] font-black text-slate-700 uppercase tracking-widest mb-8 flex items-center gap-2">
+                           <i class="fas fa-bolt text-blue-500"></i> Performance ROI (%)
+                        </h3>
+                        <div class="chart-container"><canvas id="impactChart"></canvas></div>
+                    </div>
+                    <div class="bg-slate-50 p-8 rounded-3xl border border-slate-100 shadow-inner">
+                        <h3 class="text-[10px] font-black text-slate-700 uppercase tracking-widest mb-8 flex items-center gap-2">
+                           <i class="fas fa-layer-group text-indigo-500"></i> Skill Proficiency
+                        </h3>
+                        <div class="chart-container"><canvas id="radarChart"></canvas></div>
+                    </div>
+                </div>
+                <div class="mt-12">
+                    <h3 class="text-[10px] font-black text-slate-400 uppercase tracking-[0.2em] mb-6">Expert Technical Toolbox</h3>
+                    <div class="flex flex-wrap gap-2 sm:gap-3">${getAllSkillsHTML()}</div>
+                </div>
+            `;
+            initCharts();
+        }
+
+        function renderATS() {
+            const container = document.getElementById('content-area');
+            container.innerHTML = `
+                <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 animate-in fade-in duration-500">
+                    <div class="bg-slate-900 p-8 rounded-[40px] text-center flex flex-col items-center">
+                        <h3 class="text-[10px] font-black text-slate-500 uppercase tracking-widest mb-8">Match Strength</h3>
+                        <div class="relative flex items-center justify-center p-3 rounded-full bg-slate-800 border-[10px] border-emerald-500 w-44 h-44 shadow-[0_0_30px_rgba(16,185,129,0.2)]">
+                            <div class="text-center"><span class="text-6xl font-black text-white">92</span><span class="block text-xs font-bold text-emerald-400 mt-1 uppercase">Excellent</span></div>
+                        </div>
+                        <p class="mt-10 text-xs text-slate-400 leading-relaxed">Profile layout optimized for high-speed parsing in modern ATS environments.</p>
+                    </div>
+                    <div class="bg-white p-8 rounded-[40px] border border-slate-200 lg:col-span-2 shadow-sm">
+                        <h3 class="text-[10px] font-black text-slate-400 uppercase tracking-widest mb-10">Extraction Results</h3>
+                        <div class="flex flex-wrap gap-2">
+                            ${candidateData.atsKeywords.map(k => `<span class="bg-slate-50 text-slate-600 border border-slate-200 px-3 py-1.5 rounded-xl text-xs font-bold transition-all hover:bg-blue-600 hover:text-white"># ${k}</span>`).join('')}
                         </div>
                     </div>
                 </div>
@@ -348,86 +424,45 @@
         }
 
         function getAllSkillsHTML() {
-            const types = { 
-                backend: 'bg-blue-600 text-white shadow-lg shadow-blue-100', 
-                frontend: 'bg-indigo-500 text-white shadow-lg shadow-indigo-100', 
-                database: 'bg-slate-800 text-white shadow-lg shadow-slate-100', 
-                tools: 'bg-emerald-500 text-white shadow-lg shadow-emerald-100' 
-            };
+            const types = { backend: 'bg-blue-600 text-white shadow-blue-100', frontend: 'bg-indigo-500 text-white shadow-indigo-100', database: 'bg-slate-800 text-white shadow-slate-100', tools: 'bg-emerald-600 text-white shadow-emerald-100' };
             let html = '';
             for (let cat in candidateData.skills) {
                 candidateData.skills[cat].forEach(s => {
-                    html += `<span class="px-3 py-2 rounded-xl text-[10px] sm:text-xs font-bold ${types[cat]} transition-transform hover:-translate-y-1 cursor-default whitespace-nowrap">${s}</span>`;
+                    html += `<span class="px-4 py-2 rounded-2xl text-[10px] sm:text-xs font-black uppercase tracking-tighter ${types[cat]} transition-all hover:scale-105 cursor-default whitespace-nowrap mb-2">${s}</span>`;
                 });
             }
             return html;
         }
 
-        function initImpactChart() {
-            const ctx = document.getElementById('impactChart').getContext('2d');
-            charts.impact = new Chart(ctx, {
+        function initCharts() {
+            const barCtx = document.getElementById('impactChart').getContext('2d');
+            charts.impact = new Chart(barCtx, {
                 type: 'bar',
                 data: {
                     labels: candidateData.metrics.map(m => m.label),
-                    datasets: [{
-                        data: candidateData.metrics.map(m => m.value),
-                        backgroundColor: ['#2563eb', '#4f46e5', '#10b981', '#f59e0b'],
-                        borderRadius: 12,
-                        barThickness: window.innerWidth < 640 ? 35 : 55
-                    }]
+                    datasets: [{ data: candidateData.metrics.map(m => m.value), backgroundColor: ['#2563eb', '#4f46e5', '#10b981', '#f59e0b'], borderRadius: 12 }]
                 },
-                options: {
-                    responsive: true, maintainAspectRatio: false,
-                    plugins: { 
-                        legend: { display: false },
-                        tooltip: { backgroundColor: '#0f172a', titleFont: { size: 12 }, bodyFont: { size: 12 }, padding: 12 }
-                    },
-                    scales: { 
-                        y: { beginAtZero: true, max: 50, grid: { color: '#f1f5f9' }, ticks: { font: { size: 10 } } },
-                        x: { grid: { display: false }, ticks: { font: { size: 10, weight: '800' }, color: '#64748b' } }
-                    },
-                    onClick: (e, el) => {
-                        if (el.length > 0) {
-                            const m = candidateData.metrics[el[0].index];
-                            const box = document.getElementById('impact-detail');
-                            box.classList.remove('hidden');
-                            box.innerHTML = `<strong>${m.label}:</strong> ${m.context}`;
-                        }
-                    }
-                }
+                options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { display: false } } }
             });
-        }
 
-        function initSkillsChart() {
-            const ctx = document.getElementById('skillsChart').getContext('2d');
-            charts.skills = new Chart(ctx, {
+            const radarCtx = document.getElementById('radarChart').getContext('2d');
+            charts.radar = new Chart(radarCtx, {
                 type: 'radar',
                 data: {
                     labels: ['Backend', 'Frontend', 'Database', 'DevOps', 'Architecture'],
                     datasets: [{ 
                         data: [95, 82, 88, 75, 90], 
-                        backgroundColor: 'rgba(79, 70, 229, 0.15)', 
-                        borderColor: '#4f46e5', 
-                        pointBackgroundColor: '#4f46e5',
-                        borderWidth: 3,
-                        pointRadius: 4
+                        backgroundColor: 'rgba(37, 99, 235, 0.15)', 
+                        borderColor: '#2563eb', 
+                        pointBackgroundColor: '#2563eb',
+                        borderWidth: 3
                     }]
                 },
-                options: { 
-                    responsive: true, maintainAspectRatio: false,
-                    plugins: { legend: { display: false } },
-                    scales: {
-                        r: {
-                            grid: { color: '#e2e8f0' },
-                            angleLines: { color: '#e2e8f0' },
-                            pointLabels: { font: { size: window.innerWidth < 640 ? 10 : 12, weight: '800' }, color: '#475569' },
-                            ticks: { display: false },
-                            suggestedMin: 0, suggestedMax: 100
-                        }
-                    }
-                }
+                options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { display: false } } }
             });
         }
+
+        document.addEventListener('DOMContentLoaded', () => switchTab('experience'));
     </script>
 </body>
 </html>
